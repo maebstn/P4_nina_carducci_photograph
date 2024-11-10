@@ -31,6 +31,7 @@ body {
 
 .nav li {
 	padding-inline: 10px;
+	cursor: pointer;
 }
 
 .nav a {
@@ -40,6 +41,12 @@ body {
 
 .social-link img {
 	width: 20px;
+	height: 20px;
+}
+
+.carousel-item img {
+	width: 100%;
+	height: 100%;
 }
 
 #about {
@@ -69,7 +76,9 @@ body {
 
 .picture img {
 	width: 100%;
+	height: 100%;
 }
+
 #about-me {
 	flex: 2;
 }
@@ -80,21 +89,23 @@ body {
 }
 .about-me__introduction {
 	font-family: 'Spectral';
-	font-weight: 800;
 	font-style: italic;
-	width: 60%;
+	font-weight: 800;
+	font-size: 18px;
 }
-#about-me p {
-	width: 80%;
+
+.about-me__content {
 	font-size: 14px;
 }
 
-#gallery {
-	/*	min-height: 100vh; */
+#about-me p {
+	width: 80%;
 }
+
 .title {
 	text-align: center;
 	padding-block: 2em;
+	font-size: 30px;
 }
 .gallery .nav {
 	justify-content: center;
@@ -102,8 +113,8 @@ body {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
 	color: #000;
-	background-color: #ffffff;
-	border-radius: 0;
+	background-color: #beb45a;
+	border-radius: 10px;
 }
 .nav-pills .nav-link {
 	color: #000;
@@ -147,7 +158,7 @@ body {
 	font-family: Spectral;
 	font-style: italic;
 	font-weight: 300;
-	font-size: calc(1.375rem + 1.5vw);
+	font-size: 26px;
 }
 .quote__author {
 	font-family: Spectral;
@@ -187,6 +198,15 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	z-index: 1;
+}
+
+.service__description h3 {
+	font-size: 24px;
+}
+
+span {
+	font-size: 20px;
+	font-weight: bold;
 }
 
 #contact {
@@ -254,7 +274,6 @@ input[type='submit'] {
 		margin-top: 0;
 		margin-bottom: 1em;
 	}
-	#about-me h6,
 	#about-me p {
 		width: 100%;
 	}
