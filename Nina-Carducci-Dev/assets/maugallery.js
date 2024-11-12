@@ -153,7 +153,6 @@
 					activeImage = $(this);
 				}
 			});
-
 			let activeTag = $('.tags-bar span.active-tag').data('images-toggle');
 			let imagesCollection = [];
 			if (activeTag === 'all') {
@@ -169,18 +168,16 @@
 					}
 				});
 			}
-
 			let index = 0;
+
 			$(imagesCollection).each(function (i) {
 				if ($(activeImage).attr('src') === $(this).attr('src')) {
 					index = i;
 				}
 			});
-
 			let next = imagesCollection[index + 1] || imagesCollection[index];
 			$('.lightboxImage').attr('src', $(next).attr('src'));
 		},
-
 		createLightBox(gallery, lightboxId, navigation) {
 			gallery.append(`<div class="modal fade" id="${
 				lightboxId ? lightboxId : 'galleryLightbox'
