@@ -137,16 +137,21 @@
 				});
 			}
 			let index = 0,
-				next = null;
+				prev = null;
 
 			$(imagesCollection).each(function (i) {
 				if ($(activeImage).attr('src') === $(this).attr('src')) {
 					index = i;
 				}
 			});
-			next = imagesCollection[index - 1] || imagesCollection[index];
-			$('.lightboxImage').attr('src', $(next).attr('src'));
+			if (index === 0) {
+				prev = imagesCollection[imagesCollection.length - 1]; // Dernière image
+			} else {
+				prev = imagesCollection[index - 1]; // Image précédente
+			}
+			$('.lightboxImage').attr('src', $(prev).attr('src'));
 		},
+
 		nextImage() {
 			let activeImage = null;
 			$('img.gallery-item').each(function () {
@@ -177,7 +182,7 @@
 					index = i;
 				}
 			});
-			next = imagesCollection[index + 1] || imagesCollection[index];
+			next = imagesCollection[index + 1] || imagesCollection[0];
 			$('.lightboxImage').attr('src', $(next).attr('src'));
 		},
 
@@ -204,6 +209,7 @@
                 </div>
             </div>`);
 		},
+
 		showItemTags(gallery, position, tags) {
 			var tagItems =
 				'<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all">Tous</span></li>';
